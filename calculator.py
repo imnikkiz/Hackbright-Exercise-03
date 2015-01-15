@@ -4,11 +4,22 @@ calculator.py
 Using our arithmetic.py file from Exercise02, create the
 calculator program yourself in this file.
 """
-import arithmetic.py
+from arithmetic import add, subtract, multiply, divide, square, cube, power, mod
+
+
+def tokenize(comp):
+    tokens = comp.strip()
+    tokens = tokens.split()
+    return tokens
+
 
 def main():
-	# Your code goes here
-	pass
+	computing = True
+	while computing:
+        comp = tokenize(raw_input(">"))
+        print comp
+        if comp[0]== q:
+            computing = False
 
 
 if __name__ == '__main__':
