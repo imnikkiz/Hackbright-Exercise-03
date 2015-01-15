@@ -5,6 +5,8 @@ Using our arithmetic.py file from Exercise02, create the
 calculator program yourself in this file.
 """
 from arithmetic import add, subtract, multiply, divide, square, cube, power, mod
+
+
 def calculate(comp):
     if comp[0] == "+":
         return add(comp[1], comp[2])
@@ -28,21 +30,17 @@ def calculate(comp):
         print "I don't understand."
 
 
-
-
 def tokenize(comp):
-    split = comp.strip()
-    split = split.split()
+    split = comp.split()
     operator = split[0]
     tokens = [operator]
-    if len(split) >= 2:
+    if len(split) >= 2:  # make into loop
         a = int(split[1])
         tokens.append(a)
     if len(split) > 2:
         b = int(split[2])
         tokens.append(b)
     return tokens
-
 
 
 def main():
@@ -58,3 +56,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+#  To Do:
+#  tokenize loop
+#  + 1
+#  + 1 a
