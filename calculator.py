@@ -34,12 +34,8 @@ def tokenize(comp):
     split = comp.split()
     operator = split[0]
     tokens = [operator]
-    if len(split) >= 2:  # make into loop
-        a = int(split[1])
-        tokens.append(a)
-    if len(split) > 2:
-        b = int(split[2])
-        tokens.append(b)
+    for i in range(len(split)-1):
+        tokens.append(int(split[i+1]))
     return tokens
 
 
@@ -58,6 +54,5 @@ if __name__ == '__main__':
     main()
 
 #  To Do:
-#  tokenize loop
 #  + 1
 #  + 1 a
