@@ -14,11 +14,11 @@ def tokenize(comp):
 
 
 def main():
-	computing = True
-	while computing:
-        comp = tokenize(raw_input(">"))
+    computing = True
+    while computing == True:
+        comp = tokenize(raw_input("> "))
         print comp
-        if comp[0]== q:
+        if comp[0] == "q":
             computing = False
 
 
