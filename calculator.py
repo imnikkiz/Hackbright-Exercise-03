@@ -13,17 +13,34 @@ def calculate(comp):
     elif comp[0] == "*":
         return multiply(comp[1], comp[2])
     elif comp[0] == "/":
-        return divide(comp[1], comp[2])
+        a = float(comp[1])
+        b = float(comp[2])
+        return divide(a, b)
+    elif comp[0] == "square":
+        return square(comp[1])
+    elif comp[0] == "cube":
+        return cube(comp[1])
+    elif comp[0] == "pow":
+        return power(comp[1], comp[2])
+    elif comp[0] == "mod":
+        return mod(comp[1], comp[2])
+    else:
+        print "I don't understand."
+
 
 
 
 def tokenize(comp):
-    tokens = comp.strip()
-    tokens = tokens.split()
-    operator = tokens[0]
-    a = int(tokens[1])
-    b = int(tokens[2])
-    tokens = [operator, a, b]
+    split = comp.strip()
+    split = split.split()
+    operator = split[0]
+    tokens = [operator]
+    if len(split) >= 2:
+        a = int(split[1])
+        tokens.append(a)
+    if len(split) > 2:
+        b = int(split[2])
+        tokens.append(b)
     return tokens
 
 
@@ -32,7 +49,6 @@ def main():
     computing = True
     while computing == True:
         comp = tokenize(raw_input("> "))
-        print comp
         if comp[0] == "q":
             computing = False
         else:
